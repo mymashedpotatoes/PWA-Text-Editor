@@ -5,10 +5,10 @@ This application is a text editor where the user can create snippets of code or 
 
 ## Table of Contents
 
-* [Description] (#description)
+* [Description](#description)
 * [Installation](#installation)
 * [License](#license)
-* [Demo] (#demo)
+* [Demo](#demo)
 
 ## Installation
 
