@@ -14,40 +14,44 @@ const initdb = async () =>
 
 // accepts some content and adds it to the database
 export const putDb = async (content) => {
-  // database and version
-  const jateDB = await openDB("jate", 1);
+  console.log('PUT to the database');
 
-  // new transaction specifying db and priviliges
-  const tx = jateDB.transaction("jate", "readwrite");
+  // Create a connection to the database database and version we want to use.
+  const jateDb = await openDB('jate', 1);
 
-  // open desired object store
-  const store = tx.objectStore("jate");
+  // Create a new transaction and specify the database and data privileges.
+  const tx = jateDb.transaction('jate', 'readwrite');
 
-  // pass in content
-  const request = store.put({ id:1, value: content});
+  // Open up the desired object store.
+  const store = tx.objectStore('jate');
 
-  // confirmation
+  // Use put method to update data
+  const request = store.put({ id: 1, value: content });
+
+  // Get confirmation of request
   const result = await request;
-  console.log("Data saved to the database", result);
+  console.log('Data saved to the database', result);
 };
 
 // gets all the content from the database
 export const getDb = async () => {
-  // database and version
-  const jateDB = await openDB("jate", 1);
+  console.log('GET from the database');
 
-  // new transaction specifying db and privileges
-  const tx = jateDB.transaction("jate", "readonly");
+  // Create a connection to the database database and version we want to use.
+  const jateDb = await openDB('jate', 1);
 
-  // open desired object store
-  const store = tx.objectStore("jate");
+  // Create a new transaction and specify the database and data privileges.
+  const tx = jateDb.transaction('jate', 'readonly');
 
-  // get all request
+  // Open up the desired object store.
+  const store = tx.objectStore('jate');
+
+  // Use the .getAll() method to get all data in the database.
   const request = store.getAll();
 
-  // confirmation and return
+  // Get confirmation of the request.
   const result = await request;
-  console.log("Data read from database", result);
+  console.log('result.value', result);
   return result.value;
 };
 
