@@ -20,3 +20,6 @@ After installation of the required packages, use 'npm run build' to build out an
 This project is not licensed.
 
 ## Demo
+Link to deployed application : https://pwa-text-editor-fkx5.onrender.com/
+Screenshot :
+<img width="1440" alt="Screen Shot 2024-04-11 at 7 41 02 AM" src="https://github.com/mymashedpotatoes/PWA-Text-Editor/assets/145066673/b5c9e753-1071-4b66-9991-e762bc9dcebe">
